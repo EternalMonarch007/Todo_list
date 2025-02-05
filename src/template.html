@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To_Do_App_Final</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="heading-container">
+        <h1>Todo List</h1>
+    </div>
+
+    <div class="gridLayout">
+        <div class="left-container-1">
+            <button class="add-project-btn"> Add Project</button>
+            <div class="project-list-container"></div>
+        </div>
+        <div class="left-container-2">
+            <button class="add-task-btn"> Add Task </button>
+        </div>
+        <div class="right-container">
+            <div class="project-selected-container">
+            </div>
+            <div class="added-tasks-container">
+            </div>
+        </div>
+    </div>
+    <dialog class="add-project-dialog">
+        <form  class="add-project-form" method="dialog">
+            <label for="project-name">Project Name</label>
+            <input type="text" name="project-name" id="project-name">
+            <button class="add-project-dialog-btn">Add</button>
+            <button class="close-project-dialog-btn" >Close</button>
+        </form>
+    </dialog>
+    <dialog class="add-task-dialog ">
+        <form  class="task-form" method="dialog">
+            <label for="task-name">Task Name</label>
+            <input type="text" name="task-name" id="task-name">
+            <label for="task-due-date">Task Due Date</label>
+            <input type="date" name="task-date" id="task-date">
+            <label for="task-priority">Task Priority</label>
+            <select name="task-priority" id="task-priority">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+            <label for="task-description">Task Description</label>
+            <textarea name="task-description" id="task-description"></textarea>
+            <button class="add-task-dialog-btn">Add</button>
+            <button class="close-task-dialog-btn">Close</button>
+        </form>
+    </dialog>
+
+</body>
+</html>
