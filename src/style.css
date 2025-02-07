@@ -30,3 +30,141 @@ body{
     border-radius: 7px;
     margin-top: 20px;
 }
+
+
+.gridLayout{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(5,1fr);
+    gap: 20px;
+}
+
+.grid{
+    grid-column-start: 1;
+    grid-row-start: 5;
+}
+
+.grid-col-row-span{
+    grid-column: span 2;
+    grid-row: span 5;
+}
+
+.grid-row-span{
+    grid-row: span 4;
+}
+
+.add-project-btn {
+    background-color: antiquewhite;
+    outline: none;
+    border: 2px solid black ;
+    padding:10px;
+    border-radius:5px;
+    cursor:pointer;
+}
+.add-project-btn:hover{
+    background-color: black;
+    color: white;
+}
+.add-task-btn{
+    background-color: antiquewhite;
+    outline: none;
+    border: 2px solid black ;
+    padding:10px;
+    border-radius:5px;
+    cursor:pointer;
+}
+.add-task-btn:hover{
+    background-color: black;
+    color: white;
+}
+
+.project-container{
+    background-color:antiquewhite);
+}
+
+.add-project-dialog{
+    padding: 30px;
+    background-color: #f1f1f1;
+    position: fixed;
+    max-width: 300px;
+    margin:auto;
+}
+.add-task-dialog{
+    padding: 30px;
+    background-color: #f1f1f1;
+    position: fixed;
+    max-width: 300px;
+    margin:auto;
+}
+
+.add-project-dialog label{
+    font-size: 20px;
+    color: black;
+    margin-top: 10px;
+}
+.task-dialog label{
+    margin-top: 10px;
+    font-size: 20px;
+    color: black;
+    margin-top: 10px;
+}
+.task-dialog input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+}
+.task-dialog select{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+}
+.task-dialog textarea{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+}
+.task-dialog button{
+    margin-top: 10px;
+    padding: 10px;
+    background-color: antiquewhite;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.task-dialog button:hover{
+    background-color: black;
+    color: white;
+}
+.add-project-dialog button{
+    margin-top: 10px;
+    padding: 10px;
+    background-color: antiquewhite;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.add-project-dialog button:hover{
+    background-color: black;
+    color: white;
+}
+.add-project-dialog input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+}
+
+.project-names{
+    background-color: antiquewhite;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.project-names:hover{
+    background-color: black;
+    color: white;
+}
