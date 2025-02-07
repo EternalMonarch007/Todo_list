@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To_Do_App_Final</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="heading-container">
@@ -12,14 +11,14 @@
     </div>
 
     <div class="gridLayout">
-        <div class="left-container-1">
-            <button class="add-project-btn"> Add Project</button>
+        <div class="left-container-1 grid-row-span">
+            <button class="add-project-btn open-project"> Add Project</button>
             <div class="project-list-container"></div>
         </div>
-        <div class="left-container-2">
-            <button class="add-task-btn"> Add Task </button>
+        <div class="left-container-2 grid">
+            <button class="add-task-btn open-task"> Add Task </button>
         </div>
-        <div class="right-container">
+        <div class="right-container grid-col-row-span">
             <div class="project-selected-container">
             </div>
             <div class="added-tasks-container">
@@ -30,8 +29,8 @@
         <form  class="add-project-form" method="dialog">
             <label for="project-name">Project Name</label>
             <input type="text" name="project-name" id="project-name">
-            <button class="add-project-dialog-btn">Add</button>
-            <button class="close-project-dialog-btn" >Close</button>
+            <button class="add-project-dialog-btn add-project-modal">Add</button>
+            <button class="close-project-dialog-btn close-project-modal" >Close</button>
         </form>
     </dialog>
     <dialog class="add-task-dialog ">
