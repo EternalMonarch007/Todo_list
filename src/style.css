@@ -98,10 +98,47 @@ body {
     max-width: 300px;
     margin: auto;
 }
+.add-task-dialog label{
+    font-size: 20px;
+    color: rgb(204, 10, 10);
+    margin-top: 10px;
+}
 
+.add-task-dialog input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+}
+.add-task-dialog select{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+}
+.add-task-dialog textarea{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+}
+.add-task-dialog button{
+    margin-top: 10px;
+    padding: 10px;
+    margin-right:15%;
+    margin-left:15%;
+    background-color: antiquewhite;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.add-task-dialog button:hover{
+    background-color: black;
+    color: white;
+}
 .add-project-dialog label {
     font-size: 20px;
-    color: black;
+    color: rgb(204, 10, 10);
     margin-top: 10px;
 }
 
@@ -115,6 +152,8 @@ body {
 .add-project-dialog button {
     margin-top: 10px;
     padding: 10px;
+    margin-right:15%;
+    margin-left:15%;
     background-color: antiquewhite;
     border: 2px solid black;
     border-radius: 5px;
@@ -140,14 +179,21 @@ body {
 }
 
 .project-names.selected {
-    background-color: lightblue;  /* Selected project background color */
+    background-color: rgb(1, 11, 15);  /* Selected project background color */
 }
 
+.project-heading{
+    color: antiquewhite;
+    font-size: 40px;
+    margin:0;
+}
 .task-names {
     background-color: antiquewhite;
-    padding: 10px;
+    padding: 20px;
     border-radius: 5px;
     margin-top: 10px;
+    width:70%;
+    cursor:pointer;
 }
 
 .task-names:hover {
@@ -155,6 +201,10 @@ body {
     color: white;
 }
 
-
+.added-tasks-container{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:20px;
+}
 
 
