@@ -15,6 +15,7 @@ openProject.addEventListener('click', () => {
 });
 // close project modal
 closeProject.addEventListener('click', () => {
+    document.getElementById('project-name').value = "";
     projectModal.close();
 });
 // add project modal
@@ -27,6 +28,7 @@ addProject.addEventListener('click', () => {
     } else {
         alert("Project name cannot be empty!");
     }
+    document.getElementById('project-name').value = "";
 });
 
 // Project class
@@ -58,7 +60,7 @@ class Project {
     }
 
     static displayProjectDetails(proj) {
-        projectSelectedContainer.innerHTML = `<h2>${proj.name}</h2>`;
+        projectSelectedContainer.innerHTML = `<h2 class="project-heading">${proj.name}</h2>`;
         Task.displayTasks(proj);  // Display tasks for the selected project
     }
 }
@@ -92,6 +94,10 @@ addTask.addEventListener('click', () => {
     } else {
         alert("All fields are required and a project must be selected!");
     }
+    document.getElementById('task-name').value = "";
+    document.getElementById('task-description').value = "";
+    document.getElementById('task-date').value = "";
+    document.getElementById('task-priority').value = "";
 });
 
 // Task class
@@ -108,7 +114,7 @@ class Task {
         proj.tasks.forEach(taskItem => {
             const taskElement = document.createElement('div');
             taskElement.classList.add('task-names');
-            taskElement.textContent = `${taskItem.title} - ${taskItem.priority}`;
+            taskElement.textContent = `${taskItem.title}`;
             taskList.appendChild(taskElement);
         });
     }
