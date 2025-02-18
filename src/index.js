@@ -57,7 +57,9 @@ class Project {
             });
             projectList.appendChild(project);
         });
+
     }
+    
 
     static displayProjectDetails(proj) {
         projectSelectedContainer.innerHTML = `<h2 class="project-heading">${proj.name}</h2>`;
@@ -113,14 +115,91 @@ class Task {
         taskList.innerHTML = "";
         proj.tasks.forEach(taskItem => {
             const taskElement = document.createElement('div');
-            taskElement.classList.add('task-names');
-            taskElement.textContent = `${taskItem.title}`;
+            taskElement.classList.add('task-container');
+    
+            // Assign priority-based color class
+            if (taskItem.priority.toLowerCase() === "high") {
+                taskElement.classList.add("high-priority");
+            } else if (taskItem.priority.toLowerCase() === "medium") {
+                taskElement.classList.add("medium-priority");
+            } else {
+                taskElement.classList.add("low-priority");
+            }
+    
+            taskElement.innerHTML = `
+                <p>${taskItem.title}</p>
+                <button class="check-btn">✔</button>
+            `;
+    
+            // Add event listener for task details modal
+            taskElement.addEventListener('click', (e) => {
+                if (!e.target.classList.contains("check-btn")) { 
+                    Task.showTaskModal(taskItem);
+                }
+            });
+    
+            // Add event listener for marking as completed
+            taskElement.querySelector('.check-btn').addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent modal from opening
+                Task.markAsCompleted(taskItem, proj);
+            });
+    
             taskList.appendChild(taskElement);
         });
     }
+    static markAsCompleted(task, proj) {
+        // Remove from active tasks
+        proj.tasks = proj.tasks.filter(t => t !== task);
+    
+        // Add to completed tasks
+        proj.completedTasks = proj.completedTasks || [];
+        proj.completedTasks.push(task);
+    
+        // Refresh display
+        Task.displayTasks(proj);
+        Task.displayCompletedTasks(proj);
+    }
+    static displayCompletedTasks(proj) {
+        const completedSection = document.getElementById('completed-tasks');
+        completedSection.innerHTML = "";
+    
+        proj.completedTasks?.forEach(task => {
+            const taskElement = document.createElement('div');
+            taskElement.classList.add('completed-task');
+            taskElement.innerHTML = `<p>${task.title} ✅</p>`;
+            completedSection.appendChild(taskElement);
+        });
+    }
+    
+    
+    
+    
+
+    static showTaskModal(taskItem) {
+        const modal = document.createElement('div');
+        modal.classList.add('task-modal');
+        modal.innerHTML = `
+            <div class="task-modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>${taskItem.title}</h2>
+                <p><strong>Due Date:</strong> ${taskItem.dueDate}</p>
+                <p><strong>Priority:</strong> ${taskItem.priority}</p>
+                <p><strong>Description:</strong> ${taskItem.description}</p>
+            </div>
+        `;
+
+        document.body.appendChild(modal);
+
+        // Close modal functionality
+        modal.querySelector('.close-modal').addEventListener('click', () => {
+            modal.remove();
+        });
+
+        // Close when clicking outside modal content
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.remove();
+            }
+        });
+    }
 }
-
-
-
-
-
